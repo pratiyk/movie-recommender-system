@@ -23,7 +23,9 @@ def recommend(movie):
 
     return recommended_movie_names,recommended_movie_posters
 
-st.subheader("Can't decide what to watch? I am here to help you 🎬")
+st. set_page_config(layout="wide")
+
+st.subheader("Can't decide what to watch? I am here to help you")
 st.header('The Movie Recommender System')
 movies = pickle.load(open('movie_list.pkl','rb'))
 similarity = pickle.load(open('similarity.pkl','rb'))
