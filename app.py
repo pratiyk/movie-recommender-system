@@ -23,18 +23,18 @@ def recommend(movie):
 
     return recommended_movie_names,recommended_movie_posters
 
-
-st.header('Movie Recommender System')
+st.subheader("Can't decide what to watch? I am here to help you 🎬")
+st.header('The Movie Recommender System')
 movies = pickle.load(open('movie_list.pkl','rb'))
 similarity = pickle.load(open('similarity.pkl','rb'))
 
 movie_list = movies['title'].values
 selected_movie = st.selectbox(
-    "Type or select a movie from the dropdown",
+    "Type or select a movie you like from the dropdown",
     movie_list
 )
 
-if st.button('Show Recommendation'):
+if st.button('Recommended Movies'):
     recommended_movie_names,recommended_movie_posters = recommend(selected_movie)
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
